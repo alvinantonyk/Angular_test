@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, input } from '@angular/core';
 import { BookHelperService } from '../book-helper.service';
 import { BookSummaryService } from '../book-summary.service';
 
@@ -19,8 +19,13 @@ export class BookRetailComponent  implements OnInit{
 
   summary : string="";
 
+ @Input("title") title! :string;
+ @Input("subTitle") subTitle! :string;
+
   ngOnInit(): void {
-      
+    
+ 
+
   this.book=[
     {
       author: "J.K. Rowling",
